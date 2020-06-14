@@ -128,6 +128,30 @@ app.post('/appointment', function(req, res) {
     console.log(JSON.stringify(appointments, null, 4));
 });
 
+app.delete('/appointment', function(req, res) {
+    const body = req.body;
+    if (!appointments[body.doctor]) {
+        res.status(400).send("Please include a valid doctorID with the request.");
+        return;
+    }
+
+    else if (!appointments[body.doctor][body.date] || !appointments[body.doctor][body.date][body.time]) {
+        res.status(400).send("This doctor does not have an appointment scheduled for this date and time.");
+        return;
+    }
+
+    for (let i = 0; i < appointments[body.doctor][body.date][body.time].length; i++) {
+        if (appointments[body.doctor][body.date][body.time][i].id == body.id) {
+            appointments[body.doctor][body.date][body.time].splice(i, 1);
+            res.status(200).send("The appointment was removed successfully.");
+            return;
+        }
+    }
+
+    res.status(400).send("No appointment with the corresponding ID was found.");
+    return;
+});
+
 app.listen(PORT, function () {
     console.log(`Listening on port ${PORT}`);
 });
