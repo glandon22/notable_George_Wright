@@ -1,6 +1,4 @@
-# Project Title
-
-Notable Coding Challenge
+# Notable Coding Challenge
 
 ## Getting Started
 
