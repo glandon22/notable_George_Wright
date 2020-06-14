@@ -54,7 +54,9 @@ let appointments = {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
+app.get('/doctors', function(req, res) {
+    res.status(200).send(JSON.stringify(doctors));
+});
 
 app.listen(PORT, function () {
     console.log(`Listening on port ${PORT}`);
