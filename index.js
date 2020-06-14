@@ -58,6 +58,27 @@ app.get('/doctors', function(req, res) {
     res.status(200).send(JSON.stringify(doctors));
 });
 
+app.get('/appointments', function(req, res) {
+    const doctor = req.query.doctor;
+    const date = req.query.appointmentDate;
+
+    if (!doctor || !date) {
+        res.status(400).send("Please include a valid doctor ID and date.");
+        return;
+    }
+
+    else if (!appointments[doctor]) {
+        res.status(400).send("The following doctor does exist.");
+        return;
+    }
+
+    else if (!appointments[doctor][date]) {
+        res.status(400).send("The following doctor does not have any appointments scheduled for that day.");
+    }
+
+    res.status(200).send(JSON.stringify(appointments[doctor][date]));
+});
+
 app.listen(PORT, function () {
     console.log(`Listening on port ${PORT}`);
   });
