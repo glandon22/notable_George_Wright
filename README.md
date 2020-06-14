@@ -13,8 +13,16 @@
 
 This will return an array of objects containing all current doctors.
 
-ex. [{"id":1,"firstName":"John","lastName":"Doe"},{"id":2,"firstName":"Jane","lastName":"Doe"},{"id":3,"firstName":"Alice","lastName":"Robbins"},{"id":4,"firstName":"Sam","lastName":"Smith"}]
+```JSON
 
+ex. [
+        {"id":1,"firstName":"John","lastName":"Doe"},
+        {"id":2,"firstName":"Jane","lastName":"Doe"},
+        {"id":3,"firstName":"Alice","lastName":"Robbins"},
+        {"id":4,"firstName":"Sam","lastName":"Smith"}
+    ]
+
+```
 2. GET /appointments
 
 This will return an object containing all the appointments for a doctor on a given day.
@@ -39,6 +47,7 @@ It accepts a payload in the follow structure:
         "type": "Follow-Up"
     }
 }
+```
 
 4. DELETE  /appointment
 
@@ -53,6 +62,7 @@ This will delete an existing appointment from a doctor's schedule. It accepts a 
 	"date": "07152020",
 	"type": "Follow-Up"
 }
+```
 
 
 ## Authors
