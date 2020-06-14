@@ -34,7 +34,7 @@ ex.
          {"id":"12","firstName":"George","lastName":"Wright","type":"New Patient"}
     ]
 }
-
+```
 3. POST /appointment 
 
 This route allows you to add a new appointment to an existing doctor. 
