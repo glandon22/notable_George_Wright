@@ -12,10 +12,10 @@
 1. GET /doctors
 
 This will return an array of objects containing all current doctors.
-
+ex. 
 ```JSON
 
-ex. [
+[
         {"id":1,"firstName":"John","lastName":"Doe"},
         {"id":2,"firstName":"Jane","lastName":"Doe"},
         {"id":3,"firstName":"Alice","lastName":"Robbins"},
@@ -27,7 +27,13 @@ ex. [
 
 This will return an object containing all the appointments for a doctor on a given day.
 
-ex. {"0900":[{"id":"12","firstName":"George","lastName":"Wright","type":"New Patient"}]}
+ex.
+```JSON
+{
+    "0900":[
+         {"id":"12","firstName":"George","lastName":"Wright","type":"New Patient"}
+    ]
+}
 
 3. POST /appointment 
 
@@ -63,7 +69,7 @@ This will delete an existing appointment from a doctor's schedule. It accepts a 
 	"type": "Follow-Up"
 }
 ```
-
+LINK to downloadable ZIP file: https://drive.google.com/file/d/1pEnJka1z3i7v_-2p3b3G2-7r5sUM-M-y/view?usp=sharing
 
 ## Authors
 
